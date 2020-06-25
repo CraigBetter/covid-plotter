@@ -1,4 +1,5 @@
 import matplotlib.pyplot as plt
+from datetime import date
 #TODO: rate and total on different subplots
 
 # data is like this:
@@ -22,6 +23,7 @@ deaths = []
 death_rate = []
 recover_rate = []
 nominal = []
+time_list = []
 def datalyzer():
     dataline = []
     with open("covid19.csv") as f:
@@ -38,6 +40,7 @@ def datalyzer():
             total.append(attempt(container, 7))
             recover.append(attempt(container, 9))
             deaths.append(attempt(container, 6))
+            time_list.append(
     for count, foo in enumerate(rate):
         x.append(count)
 
