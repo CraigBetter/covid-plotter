@@ -1,4 +1,5 @@
 import matplotlib.pyplot as plt
+from datetime import datetime
 from datetime import date
 #TODO: rate and total on different subplots
 
@@ -40,7 +41,10 @@ def datalyzer():
             total.append(attempt(container, 7))
             recover.append(attempt(container, 9))
             deaths.append(attempt(container, 6))
-            time_list.append(
+            try:
+                time_list.append(datetime.strptime(container[3], '%d-%m-%Y').date())
+            except:
+                pass
     for count, foo in enumerate(rate):
         x.append(count)
 
@@ -64,7 +68,7 @@ def datalyzer():
             nominal.append(nominal[index-1] + rate[index] - (recover_rate[index] + death_rate[index]))
 
 def f_rate():
-    plt.plot(x, rate)
+    plt.plot(time_list, rate)
 def f_total():
     plt.plot(x, total)
 def f_nominal():
