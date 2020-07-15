@@ -12,8 +12,9 @@ def main():
     data = pplot().data
     NS = data.prname == "Nova Scotia"
     NS_data = data[NS]
-    NS_data.plot(x='date',y='numtoday')
-    plt.show()
+    return data
+    #NS_data.plot(x='date',y='numtoday')
+    #plt.show()
 
 if __name__ == "__main__":
     main()
