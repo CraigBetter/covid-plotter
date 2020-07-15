@@ -3,13 +3,13 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 
-def pplot():
-    data = pd.read_csv('covid19.csv')
-    names = data['prname'].unique()
-    return data
+class pplot():
+    def __init__(self):
+        self.data = pd.read_csv('covid19.csv')
+        self.names = self.data['prname'].unique()
 
 def main():
-    data = pplot()
+    data = pplot().data
     NS = data.prname == "Nova Scotia"
     NS_data = data[NS]
     NS_data.plot(x='date',y='numtoday')
@@ -17,4 +17,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
