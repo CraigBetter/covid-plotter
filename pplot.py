@@ -3,6 +3,8 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 
+# TODO: rename this file to pcp.py and tell git about it
+
 class pplot():
     def __init__(self):
         self.data = pd.read_csv('covid19.csv')

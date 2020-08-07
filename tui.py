@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 from pplot import pplot
 # TODO: fix the bad section
 #       add error checking to make sure user can only input numbers in the
-#       menus
+#         menus
 #       remove the options from the second menu that are pointless
 #       
 
