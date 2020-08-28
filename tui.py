@@ -13,8 +13,8 @@ data = pplot().data
 names = pplot().names
 
 for count, name in enumerate(names):      # this is all bad
-    print(str(count).ljust(5) , name)     #
-userinput = input("pick a number: ")      #
+    print(str(count).ljust(5) , name)     # also, it should be
+userinput = input("pick a number: ")      # moved into pplot
 print(names[int(userinput)])              #
                                           #
 datas = data.axes[1]                      #

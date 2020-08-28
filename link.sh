@@ -1,6 +1,6 @@
 # https://health-infobase.canada.ca/src/data/covidLive/covid19.csv
 mv covid19.csv covid19.csv.bak
-if wget "https://health-infobase.canada.ca/src/data/covidLive/covid19.csv"
+if wget "https://health-infobase.canada.ca/src/data/covidLive/covid19.csv" || echo "wget failed"
 then
 	rm covid19.csv.bak
 else

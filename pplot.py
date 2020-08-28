@@ -9,14 +9,17 @@ class pplot():
     def __init__(self):
         self.data = pd.read_csv('covid19.csv')
         self.names = self.data['prname'].unique()
+        self.datas = []
+        for count, name in enumerate(self.names):
+            self.datas.append(self.data.prname == name)
 
 def main():
-    data = pplot().data
-    NS = data.prname == "Nova Scotia"
-    NS_data = data[NS]
+    data = pplot()
+    #NS = data.prname == "Nova Scotia"
+    #NS_data = data[NS]
     return data
     #NS_data.plot(x='date',y='numtoday')
     #plt.show()
 
 if __name__ == "__main__":
-    main()
+    data = main()
