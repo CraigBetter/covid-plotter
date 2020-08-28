@@ -11,7 +11,7 @@ class pplot():
         self.names = self.data['prname'].unique()
         self.datas = []
         for count, name in enumerate(self.names):
-            self.datas.append(self.data.prname == name)
+            self.datas.append(self.data[self.data.prname == name])
 
 def main():
     data = pplot()
