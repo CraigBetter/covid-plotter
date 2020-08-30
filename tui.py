@@ -8,19 +8,27 @@ from pplot import pplot
 #       remove the options from the second menu that are pointless
 #       
 
+def tui_menu(lst):
+    def opt_fmtr(argv1, argv2):
+        return str(argv1).ljust(5) + str(argv2)
+    for count, item in enumerate(lst):
+        print(opt_fmtr(count, item))
+    print(opt_fmtr('q', 'quit'))
+    choice = input("pick an option: ")
+    if choice == 'q':
+        exit()
+    else:
+        return choice
 
-data = pplot().data
-names = pplot().names
+data      = pplot().data
+names     = pplot().names
+provinces = pplot().provinces
 
-for count, name in enumerate(names):      # this is all bad
-    print(str(count).ljust(5) , name)     # also, it should be
-userinput = input("pick a number: ")      # moved into pplot
+userinput = tui_menu(names)
 print(names[int(userinput)])              #
                                           #
-datas = data.axes[1]                      #
-for count, name in enumerate(datas):      #
-    print(str(count).ljust(5) , name)     #
-userinput2 = input("pick a number: ")     #
+datas = data.axes[1]                      # axes[0] is row index, axes[1] is column index
+userinput2 = tui_menu(datas)
 print(datas[int(userinput2)])             #
 
 data[data.prname == names[int(userinput)]].plot(x='date',y=datas[int(userinput2)])

@@ -7,11 +7,11 @@ import matplotlib.pyplot as plt
 
 class pplot():
     def __init__(self):
-        self.data = pd.read_csv('covid19.csv')
-        self.names = self.data['prname'].unique()
-        self.datas = []
+        self.data      = pd.read_csv('covid19.csv')
+        self.names     = self.data['prname'].unique()
+        self.provinces = []
         for count, name in enumerate(self.names):
-            self.datas.append(self.data[self.data.prname == name])
+            self.provinces.append(self.data[self.data["prname"] == name])
 
 def main():
     data = pplot()
