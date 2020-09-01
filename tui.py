@@ -20,15 +20,18 @@ def tui_menu(lst):
         return str(int(choice) - 1)
 
 data      = pplot().data
-names     = pplot().names
-provinces = pplot().provinces
+names     = pplot().names     #names of provinces
+provinces = pplot().provinces #dataframes of provinces
 
+# ask user to choose a province
 userinput = tui_menu(names)
 print(names[int(userinput)])
 
-datas = data.axes[1]  # axes[0] is row index, axes[1] is column index
+# ask user to choose a data set
+datas = data.axes[1][4:]  # axes[0] is row index, axes[1] is column index
 userinput2 = tui_menu(datas)
 print(datas[int(userinput2)])
 
+# graph the data
 data[data.prname == names[int(userinput)]].plot(x='date',y=datas[int(userinput2)])
 plt.show()
