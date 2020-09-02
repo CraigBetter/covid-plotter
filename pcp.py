@@ -1,11 +1,11 @@
-# pplot.py <- pandas covid plotter
+# pcp.py <- pandas covid plotter
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 
 # TODO: rename this file to pcp.py and tell git about it
 
-class pplot():
+class pcp():
     def __init__(self):
         self.data      = pd.read_csv('covid19.csv')
         self.names     = self.data['prname'].unique()
@@ -14,7 +14,7 @@ class pplot():
             self.provinces.append(self.data[self.data["prname"] == name])
 
 def main():
-    data = pplot()
+    data = pcp()
     #NS = data.prname == "Nova Scotia"
     #NS_data = data[NS]
     return data

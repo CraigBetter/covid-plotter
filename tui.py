@@ -1,7 +1,7 @@
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
-from pplot import pplot
+from pcp import pcp
 # TODO: add error checking to make sure user can only input numbers in the
 #         menus
 #       
@@ -19,9 +19,9 @@ def tui_menu(lst):
     else:
         return str(int(choice) - 1)
 
-data      = pplot().data
-names     = pplot().names     #names of provinces
-provinces = pplot().provinces #dataframes of provinces
+data      = pcp().data
+names     = pcp().names     #names of provinces
+provinces = pcp().provinces #dataframes of provinces
 
 # ask user to choose a province
 userinput = tui_menu(names)
